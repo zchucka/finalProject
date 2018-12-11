@@ -11,8 +11,11 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    var highScore: Int = 0
+    var theme: UIColor = UIColor.cyan
+    
     override func viewDidLoad() {
+        view.backgroundColor = UIColor.blue
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
@@ -20,7 +23,6 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -47,4 +49,5 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
 }

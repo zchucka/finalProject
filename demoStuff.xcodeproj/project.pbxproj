@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03029A2521BC683200DDE87D /* HighScore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03029A2321BC683200DDE87D /* HighScore+CoreDataClass.swift */; };
+		03029A2621BC683200DDE87D /* HighScore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03029A2421BC683200DDE87D /* HighScore+CoreDataProperties.swift */; };
 		0359FC4221AC973800311A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359FC4121AC973800311A6A /* AppDelegate.swift */; };
 		0359FC4421AC973800311A6A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0359FC4321AC973800311A6A /* GameScene.sks */; };
 		0359FC4621AC973800311A6A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0359FC4521AC973800311A6A /* Actions.sks */; };
@@ -15,9 +17,15 @@
 		0359FC4D21AC973800311A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359FC4B21AC973800311A6A /* Main.storyboard */; };
 		0359FC4F21AC973A00311A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359FC4E21AC973A00311A6A /* Assets.xcassets */; };
 		0359FC5221AC973A00311A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359FC5021AC973A00311A6A /* LaunchScreen.storyboard */; };
+		038B0BEE21ACAB0D00D3C8C9 /* mainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B0BED21ACAB0D00D3C8C9 /* mainMenuViewController.swift */; };
+		038B0BF021ACAE8100D3C8C9 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B0BEF21ACAE8100D3C8C9 /* settingsViewController.swift */; };
+		038B0BF221ACAFC600D3C8C9 /* gameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B0BF121ACAFC600D3C8C9 /* gameOverViewController.swift */; };
+		038B0BF521ACB33E00D3C8C9 /* highScore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 038B0BF321ACB33E00D3C8C9 /* highScore.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03029A2321BC683200DDE87D /* HighScore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HighScore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		03029A2421BC683200DDE87D /* HighScore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HighScore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0359FC3E21AC973800311A6A /* demoStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FC4121AC973800311A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0359FC4321AC973800311A6A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +36,10 @@
 		0359FC4E21AC973A00311A6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0359FC5121AC973A00311A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0359FC5321AC973A00311A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		038B0BED21ACAB0D00D3C8C9 /* mainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainMenuViewController.swift; sourceTree = "<group>"; };
+		038B0BEF21ACAE8100D3C8C9 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		038B0BF121ACAFC600D3C8C9 /* gameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameOverViewController.swift; sourceTree = "<group>"; };
+		038B0BF421ACB33E00D3C8C9 /* highScore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = highScore.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +72,18 @@
 		0359FC4021AC973800311A6A /* demoStuff */ = {
 			isa = PBXGroup;
 			children = (
+				03029A2321BC683200DDE87D /* HighScore+CoreDataClass.swift */,
+				03029A2421BC683200DDE87D /* HighScore+CoreDataProperties.swift */,
 				0359FC4121AC973800311A6A /* AppDelegate.swift */,
 				0359FC4321AC973800311A6A /* GameScene.sks */,
 				0359FC4521AC973800311A6A /* Actions.sks */,
 				0359FC4721AC973800311A6A /* GameScene.swift */,
 				0359FC4921AC973800311A6A /* GameViewController.swift */,
 				0359FC4B21AC973800311A6A /* Main.storyboard */,
+				038B0BF321ACB33E00D3C8C9 /* highScore.xcdatamodeld */,
+				038B0BEF21ACAE8100D3C8C9 /* settingsViewController.swift */,
+				038B0BF121ACAFC600D3C8C9 /* gameOverViewController.swift */,
+				038B0BED21ACAB0D00D3C8C9 /* mainMenuViewController.swift */,
 				0359FC4E21AC973A00311A6A /* Assets.xcassets */,
 				0359FC5021AC973A00311A6A /* LaunchScreen.storyboard */,
 				0359FC5321AC973A00311A6A /* Info.plist */,
@@ -146,6 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03029A2521BC683200DDE87D /* HighScore+CoreDataClass.swift in Sources */,
+				038B0BF221ACAFC600D3C8C9 /* gameOverViewController.swift in Sources */,
+				03029A2621BC683200DDE87D /* HighScore+CoreDataProperties.swift in Sources */,
+				038B0BF021ACAE8100D3C8C9 /* settingsViewController.swift in Sources */,
+				038B0BF521ACB33E00D3C8C9 /* highScore.xcdatamodeld in Sources */,
+				038B0BEE21ACAB0D00D3C8C9 /* mainMenuViewController.swift in Sources */,
 				0359FC4821AC973800311A6A /* GameScene.swift in Sources */,
 				0359FC4A21AC973800311A6A /* GameViewController.swift in Sources */,
 				0359FC4221AC973800311A6A /* AppDelegate.swift in Sources */,
@@ -346,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		038B0BF321ACB33E00D3C8C9 /* highScore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				038B0BF421ACB33E00D3C8C9 /* highScore.xcdatamodel */,
+			);
+			currentVersion = 038B0BF421ACB33E00D3C8C9 /* highScore.xcdatamodel */;
+			path = highScore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0359FC3621AC973800311A6A /* Project object */;
 }
