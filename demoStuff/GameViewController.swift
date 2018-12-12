@@ -14,6 +14,8 @@ class GameViewController: UIViewController {
     var highScore: Int = 0
     var theme: UIColor = UIColor.cyan
     var time: Int = -1
+    var setting: String = ""
+    var music: Bool = false
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.blue
@@ -24,8 +26,14 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
+                if let realScene = scene as? GameScene
+                {
+                    realScene.viewController = self
+                    realScene.scaleMode = scene.scaleMode
+                    view.presentScene(realScene)
+                }
                 // Present the scene
-                view.presentScene(scene)
+                //view.presentScene(scene)
             }
             
             view.ignoresSiblingOrder = true
@@ -53,14 +61,29 @@ class GameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            if id == "gameOver" {
+            if id == "winner" {
                 if let destin = segue.destination as? gameOverViewController {
                     destin.finalValue = self.time
                     destin.highValue = self.highScore
                     destin.theme = self.theme
+                    destin.diff = self.setting
+                    destin.music = self.music
+                }
+            } else if id == "loser" {
+                if let destin = segue.destination as? mainMenuViewController {
+                    destin.settingsDictionary["theme"] = self.theme
+                    destin.settingsDictionary["difficulty"] = self.setting
+                    destin.settingsDictionary["music"] = self.music
                 }
             }
         }
     }
     
+    func winner() {
+        performSegue(withIdentifier: "winner", sender: self)
+    }
+    
+    func loser() {
+        performSegue(withIdentifier: "loser", sender: self)
+    }
 }

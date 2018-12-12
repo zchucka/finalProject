@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class settingsViewController: UIViewController {
     @IBOutlet var musicSwitch: UISwitch!
@@ -17,6 +18,7 @@ class settingsViewController: UIViewController {
     var music: Bool? = nil
     var diff: String? = nil
     var initialSettings: [String: Any]? = nil
+    var backgroundMusicPlayer = AVAudioPlayer()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {

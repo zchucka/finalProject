@@ -15,6 +15,8 @@ class gameOverViewController: UIViewController {
     var finalValue: Int = 0
     var highValue: Int = 0
     var theme: UIColor = UIColor.cyan
+    var diff: String = ""
+    var music: Bool = false
     
     override func viewDidLoad() {
         // add in the users score along with the high score
@@ -22,7 +24,7 @@ class gameOverViewController: UIViewController {
         // determine if the user's score is good enough to be added to the leaderboards
         // connect once I realize how to with the way that the spritekit works
         self.view.backgroundColor = theme
-        if finalValue > highValue
+        if finalValue < highValue
         {
             finalScore.text = "Your Score: \(finalValue)"
             highScore.text = "New High Score!"
@@ -36,7 +38,10 @@ class gameOverViewController: UIViewController {
         if let identifier = segue.identifier {
             if identifier == "mainMenu" {
                 if let desty = segue.destination as? mainMenuViewController {
-                    desty.newHighScore(userScore: Int32(finalValue))
+                    desty.newHigh = finalValue
+                    desty.settingsDictionary["theme"] = theme
+                    desty.settingsDictionary["difficulty"] = diff
+                    desty.settingsDictionary["music"] = music
                 }
             }
         }
