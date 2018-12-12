@@ -19,7 +19,7 @@ class mainMenuViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var scoresArray = [HighScore]()
-    var settingsDictionary: [String: Any] = ["theme": UIColor.cyan, "music": false, "difficulty": "easy"]
+    var settingsDictionary: [String: Any] = ["theme": UIColor.cyan, "music": false, "difficulty": "Easy"]
     
     override func viewDidLoad() {
         view.backgroundColor = (settingsDictionary["theme"] as! UIColor)
@@ -44,18 +44,19 @@ class mainMenuViewController: UIViewController {
         
         do {
             scoresArray = try context.fetch(request)
-            //cleanse() ***if i need to clean up core data
+            print(scoresArray.count)
+            //cleanse() // ***if i need to clean up core data***
             if scoresArray.count < 5 {
                 initializeScores()
             }
 
-            //newHighScore(userScore: 1000)
+            // newHighScore(userScore: 12) ***for testing adding***
             sortArray(startIndex: 0)
-            highScoreLabel.text = "1. \(scoresArray[0].score)"
-            secondBestLabel.text = "2. \(scoresArray[1].score)"
-            thirdBestLabel.text = "3. \(scoresArray[2].score)"
-            fourthBestLabel.text = "4. \(scoresArray[3].score)"
-            fifthBestLabel.text = "5. \(scoresArray[4].score)"
+            highScoreLabel.text = "1. \(scoresArray[0].score) seconds"
+            secondBestLabel.text = "2. \(scoresArray[1].score) seconds"
+            thirdBestLabel.text = "3. \(scoresArray[2].score) seconds"
+            fourthBestLabel.text = "4. \(scoresArray[3].score) seconds"
+            fifthBestLabel.text = "5. \(scoresArray[4].score) seconds"
         }
         catch {
             print("Error fetching requests")
@@ -64,11 +65,10 @@ class mainMenuViewController: UIViewController {
     
     func initializeScores() {
         var x = 0
-        
         while x < 5
         {
             let newScore = HighScore(context: self.context)
-            newScore.score = Int32(250 - (x * 50))
+            newScore.score = Int32(30 - ((5-x) * 5))
             newScore.position = Int16(x + 1)
             scoresArray.append(newScore)
             x += 1
@@ -107,10 +107,10 @@ class mainMenuViewController: UIViewController {
         newScore.score = userScore
         newScore.position = 6
         for x in scoresArray {
-            if x.score < userScore && newScore.position > x.position {
+            if x.score > userScore && newScore.position > x.position {
                 newScore.position = x.position
                 x.position += 1
-            } else if x.score < userScore {
+            } else if x.score > userScore {
                 x.position += 1
             }
         }

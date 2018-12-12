@@ -13,6 +13,7 @@ import GameplayKit
 class GameViewController: UIViewController {
     var highScore: Int = 0
     var theme: UIColor = UIColor.cyan
+    var time: Int = -1
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.blue
@@ -48,6 +49,18 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            if id == "gameOver" {
+                if let destin = segue.destination as? gameOverViewController {
+                    destin.finalValue = self.time
+                    destin.highValue = self.highScore
+                    destin.theme = self.theme
+                }
+            }
+        }
     }
     
 }
